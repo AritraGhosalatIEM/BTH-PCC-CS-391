@@ -1,0 +1,8 @@
+Enter number of elements (positive integer) : 10
+Enter of elements (integer - comma separated) : 45,34,13,54,23,756,-64,56,-45,120
+Enter the element to be searched (integer) : 13
+13 found in array at index 2.
+Enter of elements in ASCENDING ORDER (integer - comma separated) : -64,-45,13,23,34,45,54,56,120,756
+Enter the element to be searched (integer) : 45
+45 found in array at index 5.
+[cab1729@arch BTH-PCC-CS-391]$ 

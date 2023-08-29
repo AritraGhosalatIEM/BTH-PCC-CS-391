@@ -1,0 +1,4 @@
+Enter number of elements (positive integer) : 10                          
+Enter of elements (integer - comma separated) : -64,-45,13,23,34,45,54,56,120,756
+Merge Sort: -64,-45,13,23,34,45,54,56,120,756
+Quick Sort: -64,-45,13,23,34,45,54,56,120,756

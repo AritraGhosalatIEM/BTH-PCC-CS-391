@@ -1,0 +1,21 @@
+Enter integer values to add to queue and enter any string to remove from queue
+10
+40
+20
+45
+64
+d
+Dequeued : 10
+d
+Dequeued : 40
+32
+d
+Dequeued : 20
+d
+Dequeued : 45
+d
+Dequeued : 64
+d
+Dequeued : 32
+d
+No items in queue.

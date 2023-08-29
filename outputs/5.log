@@ -1,0 +1,16 @@
+Enter the numbers : 
+1
+2
+3
+4
+5
+6
+76
+7
+8
+END
+Insert value : 40
+at index : 3
+1->2->3->4->40->5->6->76->7->8->END
+Delete at index : 7
+1->2->3->4->40->5->6->7->8->END

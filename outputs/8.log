@@ -1,0 +1,2 @@
+$ ./a.out 'a+b/c*(e+g)+h-f*i'                                                                                                               
+abc/eg+*+h+fi*-

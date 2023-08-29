@@ -1,0 +1,29 @@
+Enter 'a' to use an array or 'l' to use a list.
+l
+List!
+1
+2
+3
+4
+5
+6
+7
+p
+Popped : 7.
+p
+Popped : 6.
+40
+p
+Popped : 40.
+p
+Popped : 5.
+p
+Popped : 4.
+p
+Popped : 3.
+p
+Popped : 2.
+p
+Popped : 1.
+p
+Stack underflow
