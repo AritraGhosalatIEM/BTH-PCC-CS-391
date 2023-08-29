@@ -4,17 +4,14 @@
 typedef struct node{
 	int data;
 	struct node* after;
-	struct node* before;
 } Node;
-Node *head,*tail;
+Node *head,**tail;
 void enqueue(int value){
 	Node* new=(Node*)malloc(sizeof(Node));
 	new->data=value;
-	if(head==NULL)head=new;
-	else tail->after=new;
-	new->before=tail;
 	new->after=NULL;
-	tail=new;
+	*tail=new;
+	tail=&(new->after);
 }
 typedef struct resp{
 	int data;
@@ -30,13 +27,12 @@ Response dequeue(){
 	Node* remove=head;
 	ret.data=remove->data;
 	head=remove->after;
-	if(head!=NULL)
-		head->before=NULL;
 	free(remove);
 	return ret;
 }
 int main(){
-	head=tail=NULL;
+	head=NULL;
+	tail=&head;
 	Response deq;
 	int value;
 	puts("Enter integer values to add to queue and enter any string to remove from queue");
