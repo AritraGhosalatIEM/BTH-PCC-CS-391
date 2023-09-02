@@ -1,0 +1,34 @@
+start function input declare head as Node pointer declare input as integer print "Enter the numbers : " declare current as pointer to pointer of Node and set it to the address of head while (scanf("%d", &input)) allocate memory for current as a Node set (current)->data to input set current to the address of ((current)->link) end while scanf("%s") set *current to NULL return head end function
+
+start function insert_after
+    declare new as Node pointer and allocate memory for it as a Node
+    set new->data to value
+    set new->link to current->link
+    set current->link to new
+end function
+
+start function delete_after
+    declare remove as Node pointer and set it to current->link
+    set current->link to remove->link
+    free remove
+end function
+
+start function traverse
+    declare i as unsigned integer and set it to 0
+    for each current in the linked list until current is NULL
+        if i is equal to index, return current
+        call function with current as argument
+        increment i by 1
+    end for
+    return NULL
+end function
+
+start function null_function
+    // do nothing
+end function
+
+start function show_node
+    print current->data followed by "->"
+end function
+
+start of main function declare head as Node pointer and set it to result of input function call declare value as integer declare index as unsigned integer print "Insert value : " scanf("%d", &value) print "at index : " scanf("%d", &index) declare at as Node pointer and set it to result of traverse function call with arguments head, index, and nullfunction if at is not NULL then call insertafter function with arguments at and value call traverse function with arguments head, -1, and shownode print "END" else print "Node unavailable" end if print "Delete at index : " scanf("%d", &index) if (at = result of traverse function call with arguments head, index-1, and nullfunction) is not NULL then call deleteafter function with arguments at and value call traverse function with arguments head, -1, and shownode print "END" else print "Node unavailable" end if return 0 end of main function

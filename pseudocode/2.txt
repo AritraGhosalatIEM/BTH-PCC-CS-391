@@ -1,0 +1,70 @@
+DISPLAY(arr,len)
+
+Print arr[0]
+For i = 1 to len-1
+Print ", arr[i]"
+Print new line
+MERGESORT(arr,len)
+
+If len = 1
+Return
+Set mid = len/2
+Set rest = len - mid
+Create left and right arrays of size mid and rest respectively
+Copy the first mid elements of arr into left array using memcpy()
+Copy the rest of the elements of arr starting from mid into right array using memcpy()
+Call mergesort(left,mid)
+Call mergesort(right,rest)
+Set i, j, and k to 0
+While i < mid and j < rest
+If left[i] < right[j]
+Set arr[k] = left[i]
+Increment i by 1
+Else
+Set arr[k] = right[j]
+Increment j by 1
+Increment k by 1
+While j < rest
+Set arr[k] = right[j]
+Increment j by 1
+Increment k by 1
+While i < mid
+Set arr[k] = left[i]
+Increment i by 1
+Increment k by 1
+QUICKSORT(arr,begin,len)
+
+If begin = len
+Return
+Set pivot = arr[len-1]
+Set from_left = begin
+Set from_right = len-1
+While fromleft < fromright
+While arr[fromleft] < pivot and fromleft <= from_right
+Increment from_left by 1
+While arr[fromright] > pivot and fromleft <= from_right
+Decrement from_right by 1
+Set t = arr[from_left]
+Set arr[fromleft] = arr[fromright]
+Set arr[from_right] = t
+Call quicksort(arr,begin,from_right)
+Call quicksort(arr,from_right+1,len)
+MAIN()
+
+Declare len as unsigned int
+Print "Enter number of elements (positive integer) : "
+Read len from user
+Declare arr as an array of size len
+Print "Enter of elements (integer - comma separated) : "
+For i = 0 to len-1
+Read arr[i] from user
+Declare sorted as an array of size len
+Print "Merge Sort: "
+Copy all elements of arr to sorted using memcpy()
+Call mergesort(sorted,len)
+Call display(sorted,len)
+Print "Quick Sort: "
+Copy all elements of arr to sorted using memcpy()
+Call quicksort(sorted,0,len)
+Call display(sorted,len)
+Return 0

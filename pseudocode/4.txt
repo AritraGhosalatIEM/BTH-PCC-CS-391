@@ -1,0 +1,123 @@
+Define a data structure called Matrix with two properties: elements (a pointer to a 2D array of integers) and two unsigned integers m and n.
+
+Define a function called transpose that takes a Matrix as input and returns a new Matrix.
+
+Inside the transpose function, create a new Matrix called t.
+
+Set the number of rows (m) and columns (n) of t equal to the number of columns (n) and rows (m) of the input matrix (in).
+
+Allocate memory for the elements of t, which is a 2D array.
+
+Iterate over the rows (i) of the input matrix (in).
+
+Inside the loop, allocate memory for each row (i) of the transposed matrix (t).
+
+Iterate over the columns (j) of the input matrix (in).
+
+Inside the nested loop, assign the element at position (i, j) of the transposed matrix (t) to the element at position (j, i) of the input matrix (in).
+
+Return the transposed Matrix (t).
+
+Define a function called add that takes two Matrix objects, a and b, as input and returns a new Matrix.
+
+Inside the add function, create a new Matrix called sum.
+
+Check if the number of rows (m) of matrix a is equal to the number of rows (m) of matrix b, and if the number of columns (n) of matrix b is equal to the number of columns (n) of matrix b. If not, set the elements of sum to NULL and return sum.
+
+If the conditions in step 13 are satisfied, set the number of rows (m) and columns (n) of sum equal to the number of rows (m) and columns (n) of matrix a.
+
+Allocate memory for the elements of sum, which is a 2D array.
+
+Iterate over the rows (i) of matrix a.
+
+Inside the loop, allocate memory for each row (i) of sum.
+
+Iterate over the columns (j) of matrix a.
+
+Inside the nested loop, assign the element at position (i, j) of sum to the sum of the elements at position (i, j) of matrix a and matrix b.
+
+Return the Matrix sum.
+
+Define a function called multiply that takes two Matrix objects, a and b, as input and returns a new Matrix.
+
+Inside the multiply function, create a new Matrix called product.
+
+Check if the number of columns (n) of matrix a is equal to the number of rows (m) of matrix b. If not, set the elements of product to NULL and return product.
+
+If the condition in step 23 is satisfied, set the number of rows (m) of product equal to the number of rows (m) of matrix a, and the number of columns (n) of product equal to the number of columns (n) of matrix b.
+
+Allocate memory for the elements of product, which is a 2D array.
+
+Iterate over the rows (i) of matrix a.
+
+Inside the loop, allocate memory for each row (i) of product.
+
+Iterate over the columns (j) of matrix a.
+
+Inside the nested loop, set the element at position (i, j) of product to 0.
+
+Iterate over the elements (k) of matrix a in the third dimension.
+
+Inside the nested loop, add the product of the elements at position (i, k) of matrix a and (k, j) of matrix b to the element at position (i, j) of product.
+
+Return the Matrix product.
+
+Define a function called input that takes a character name as input and returns a Matrix.
+
+Inside the input function, create a new Matrix called a.
+
+Print a message asking the user to enter the dimensions of the matrix.
+
+Read the dimensions of the matrix from the user and assign them to the row (m) and column (n) properties of matrix a.
+
+Print a message asking the user to enter the elements of the matrix.
+
+Allocate memory for the elements of matrix a, which is a 2D array.
+
+Iterate over the rows (i) of matrix a.
+
+Inside the loop, allocate memory for each row (i) of matrix a.
+
+Iterate over the columns (j) of matrix a.
+
+Inside the nested loop, read an integer from the user and assign it to the element at position (i, j) of matrix a.
+
+Print a newline character to separate the rows of the matrix.
+
+Return matrix a.
+
+Define a function called print that takes a Matrix object and a string name as input.
+
+Inside the print function, check if the elements of matrix a is NULL. If so, print "INVALID" and return.
+
+Calculate the length of the string name and assign it to the variable l.
+
+Print the string name followed by an equals sign and a space.
+
+Iterate over the rows (i) of matrix a.
+
+Inside the loop, print the first element of each row (i) of matrix a.
+
+Iterate over the columns (j) of matrix a.
+
+Inside the nested loop, print a comma followed by the element at position (i, j) of matrix a.
+
+Print a newline character to separate the rows of the matrix.
+
+Iterate over the range l.
+
+Inside the loop, print a space character.
+
+Print a newline character.
+
+Define the main function.
+
+Inside the main function, create two Matrix objects, a and b, by calling the input function with the characters 'A' and 'B' as arguments.
+
+Print the transpose of matrix a by calling the print function with the transpose of matrix a and the string "Aᵗ" as arguments.
+
+Print the sum of matrix a and matrix b by calling the print function with the sum of matrix a and matrix b, and the string "A+B" as arguments.
+
+Print the product of matrix a and matrix b by calling the print function with the product of matrix a and matrix b, and the string "AxB" as arguments.
+
+Return 0 to indicate successful program execution.

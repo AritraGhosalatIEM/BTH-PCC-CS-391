@@ -1,0 +1,37 @@
+Declare necessary variables and constants:
+MAX as a constant with value 10
+Node as a struct with data and below members
+Response as a struct with data and error members
+top as an integer
+arr as an array of integers with size MAX
+head as a pointer to a Node
+push_arr as a function that takes an integer value and returns a boolean
+push_list as a function that takes an integer value and returns a boolean
+pop_arr as a function that returns a Response
+pop_list as a function that returns a Response
+push as a function pointer that takes an integer value and returns a boolean
+pop as a function pointer that returns a Response
+c as a character
+Set top to -1 and head to NULL.
+
+Prompt the user to enter 'a' to use an array or 'l' to use a list.
+
+Read the input character and assign it to c.
+
+If c is 'a', print "Array!" and assign the address of push_arr to push and the address of pop_arr to pop. If c is 'l', print "List!" and assign the address of push_list to push and the address of pop_list to pop. Otherwise, return 1.
+
+Declare variables value and resp of type Response.
+
+Enter an infinite loop.
+
+Read a integer value from input and assign it to value.
+
+If push(value) returns false, print "Stack overflow."
+
+Read and discard the next input.
+
+Assign the result of calling pop() to resp.
+
+If resp.error is true, print "Stack underflow." Otherwise, print "Popped: %d." followed by the value of resp.data.
+
+End the program.

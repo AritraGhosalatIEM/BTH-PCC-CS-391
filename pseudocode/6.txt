@@ -1,0 +1,36 @@
+Algorithm: enqueue(value)
+
+Create a new node 'new' of type Node.
+Set new->data equal to value.
+Set new->after equal to NULL.
+Set *tail equal to new.
+Set tail equal to &(new->after).
+Algorithm: dequeue()
+
+Create a new variable 'ret' of type Response.
+Check if head is equal to NULL.
+If true, then set ret.underflow equal to true and return ret.
+Set ret.underflow equal to false.
+Create a new variable 'remove' of type Node and set it equal to head.
+Set ret.data equal to remove->data.
+Set head equal to remove->after.
+Free the memory allocated to remove.
+Return ret.
+Algorithm: main()
+
+Set head equal to NULL.
+Set tail equal to the address of head.
+Create a new variable 'deq' of type Response.
+Create a new variable 'value' of type int.
+Print "Enter integer values to add to queue and enter any string to remove from queue".
+Start an infinite loop.
+Repeat steps 7-11 until a break statement is encountered.
+Read an integer value from the user using scanf() and store it in the variable 'value'.
+Call enqueue(value).
+Read a string (using scanf() and discarding the input) to remove an item from the queue.
+Set deq equal to the result of calling dequeue().
+Check if deq.underflow is true.
+If true, then print "No items in queue."
+If false, then print "Dequeued : " followed by deq.data.
+End the infinite loop.
+Return 0.

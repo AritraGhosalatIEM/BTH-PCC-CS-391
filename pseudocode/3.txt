@@ -1,0 +1,48 @@
+FUNCTION linearsearch(arr[], len, element)
+    FOR len = len - 1 TO 0
+        IF arr[len] = element
+            RETURN len
+    RETURN -1
+
+FUNCTION binarysearch(arr[], len, element)
+    SET beg = 0
+    SET m = 0
+    SET e = 0
+    WHILE beg <= len
+        SET m = (beg + len) / 2
+        SET e = arr[m]
+        IF e = element
+            RETURN m
+        ELSE IF e > element
+            SET len = m - 1
+        ELSE
+            SET beg = m + 1
+    RETURN -1
+
+FUNCTION main()
+    SET len = 0
+    PRINT "Enter number of elements (positive integer): "
+    READ len
+    SET arr[len]
+    PRINT "Enter of elements (integer - comma separated): "
+    FOR i = 0 TO len - 1
+        READ arr[i]
+    PRINT "Enter the element to be searched (integer): "
+    SET e = 0
+    READ e
+    SET index = linearsearch(arr, len, e)
+    IF index = -1
+        PRINT e + " not found in array."
+    ELSE
+        PRINT e + " found in array at index " + index + "."
+    PRINT "Enter of elements in ASCENDING ORDER (integer - comma separated): "
+    FOR i = 0 TO len - 1
+        READ arr[i]
+    PRINT "Enter the element to be searched (integer): "
+    READ e
+    SET index = binarysearch(arr, len, e)
+    IF index = -1
+        PRINT e + " not found in array."
+    ELSE
+        PRINT e + " found in array at index " + index + "."
+    RETURN 0

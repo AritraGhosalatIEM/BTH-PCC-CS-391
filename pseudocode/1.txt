@@ -1,0 +1,57 @@
+ALGORITHM display(arr[], len):
+    PRINT arr[0]
+    FOR i = 1 to len-1
+        PRINT ", " + arr[i]
+    PRINT "\n"
+
+ALGORITHM bubblesort(arr[], len):
+    sorted = false
+    DO
+        sorted = true
+        FOR i = 1 to len-1
+            IF arr[i] < arr[i-1] THEN
+                sorted = false
+                t = arr[i]
+                arr[i] = arr[i-1]
+                arr[i-1] = t
+            END IF
+        END FOR
+    WHILE sorted is false
+
+ALGORITHM selectionsort(arr[], len): FOR i = 0 to len-1 min = arr[i] minindex = i FOR j = i to len-1 IF arr[j] < min THEN min = arr[j] minindex = j END IF END FOR arr[min_index] = arr[i] arr[i] = min END FOR
+
+ALGORITHM insertionsort(arr[], len):
+    FOR i = 1 to len-1
+        e = arr[i]
+        j = i-1
+        WHILE j >= 0 AND arr[j] > e
+            arr[j+1] = arr[j]
+            j = j-1
+        END WHILE
+        arr[j+1] = e
+    END FOR
+
+FUNCTION main():
+    PRINT "Enter number of elements (positive integer) : "
+    READ len
+    DECLARE arr[len]
+    PRINT "Enter of elements (integer - comma separated) : "
+    FOR i = 0 to len-1
+        READ arr[i]
+    END FOR
+    DECLARE sorted[len]
+    PRINT "Bubble Sort: "
+    COPY arr to sorted
+    CALL bubblesort(sorted,len)
+    CALL display(sorted,len)
+    PRINT "Selection Sort: "
+    COPY arr to sorted
+    CALL selectionsort(sorted,len)
+    CALL display(sorted,len)
+    PRINT "Insertion Sort: "
+    COPY arr to sorted
+    CALL insertionsort(sorted,len)
+    CALL display(sorted,len)
+    RETURN 0
+END FUNCTION
+
