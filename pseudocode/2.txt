@@ -52,10 +52,10 @@ Call quicksort(arr,from_right+1,len)
 MAIN()
 
 Declare len as unsigned int
-Print "Enter number of elements (positive integer) : "
+Print "Enter the number of elements (positive integer) : "
 Read len from user
 Declare arr as an array of size len
-Print "Enter of elements (integer - comma separated) : "
+Print "Enter the elements (integer - comma separated) : "
 For i = 0 to len-1
 Read arr[i] from user
 Declare sorted as an array of size len

@@ -49,10 +49,10 @@ void insertionsort(int arr[],unsigned int len){
 }
 int main(){
 	unsigned int len;
-	printf("Enter number of elements (positive integer) : ");
+	printf("Enter the number of elements (positive integer) : ");
 	scanf("%d",&len);
 	int arr[len];
-	printf("Enter of elements (integer - comma separated) : ");
+	printf("Enter the elements (integer - comma separated) : ");
 	for(unsigned int i=0;i<len;i++)
 		scanf("%d,",&arr[i]);
 	int sorted[len];

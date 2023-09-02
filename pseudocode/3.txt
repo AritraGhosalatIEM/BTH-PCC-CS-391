@@ -21,10 +21,10 @@ FUNCTION binarysearch(arr[], len, element)
 
 FUNCTION main()
     SET len = 0
-    PRINT "Enter number of elements (positive integer): "
+    PRINT "Enter the number of elements (positive integer): "
     READ len
     SET arr[len]
-    PRINT "Enter of elements (integer - comma separated): "
+    PRINT "Enter the elements (integer - comma separated): "
     FOR i = 0 TO len - 1
         READ arr[i]
     PRINT "Enter the element to be searched (integer): "

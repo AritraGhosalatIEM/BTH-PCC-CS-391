@@ -32,10 +32,10 @@ ALGORITHM insertionsort(arr[], len):
     END FOR
 
 FUNCTION main():
-    PRINT "Enter number of elements (positive integer) : "
+    PRINT "Enter the number of elements (positive integer) : "
     READ len
     DECLARE arr[len]
-    PRINT "Enter of elements (integer - comma separated) : "
+    PRINT "Enter the elements (integer - comma separated) : "
     FOR i = 0 to len-1
         READ arr[i]
     END FOR
