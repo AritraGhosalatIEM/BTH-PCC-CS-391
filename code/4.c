@@ -24,7 +24,7 @@ Matrix add(Matrix a,Matrix b){
 		return sum;
 	}
 	sum.m=a.m;sum.n=a.n;
-	sum.elements=(int**)malloc(sum.m*sizeof(int));
+	sum.elements=(int**)malloc(sum.m*sizeof(int*));
 	for(unsigned int i=0;i<sum.m;i++){
 		sum.elements[i]=(int*)malloc(sum.n*sizeof(int));
 		for(unsigned int j=0;j<sum.n;j++)
@@ -38,8 +38,8 @@ Matrix multiply(Matrix a,Matrix b){
 		product.elements=NULL;
 		return product;
 	}
-	product.m=a.m;product.n=a.n;
-	product.elements=(int**)malloc(product.m*sizeof(int));
+	product.m=a.m;product.n=b.n;
+	product.elements=(int**)malloc(product.m*sizeof(int*));
 	for(unsigned int i=0;i<product.m;i++){
 		product.elements[i]=(int*)malloc(product.n*sizeof(int));
 		for(unsigned int j=0;j<product.n;j++){

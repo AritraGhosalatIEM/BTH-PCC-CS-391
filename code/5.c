@@ -24,7 +24,7 @@ void insert_after(Node* current,int value){
 	new->link=current->link;
 	current->link=new;
 }
-void delete_after(Node* current,int value){
+void delete_after(Node* current){
 	Node* remove=current->link;
 	current->link=remove->link;
 	free(remove);
@@ -60,7 +60,7 @@ int main(){
 	printf("Delete at index : ");
 	scanf("%d",&index);
 	if((at=traverse(head,index-1,null_function))!=NULL){
-		delete_after(at,value);
+		delete_after(at);
 		traverse(head,-1,show_node);printf("END\n");//display
 	}
 	else printf("Node unavailable");
