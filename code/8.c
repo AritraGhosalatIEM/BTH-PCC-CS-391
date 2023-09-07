@@ -25,24 +25,20 @@ int main(int argc,char** argv){
 	Node* top=(Node*)malloc(sizeof(Node));
 	top->next=NULL;
 	top->op='(';
-	Node* expression;
-	Node **tail=&expression;
+	Node* remove;
 	char c;unsigned int p;Node* new;
 	for(unsigned int i;i<len;i++){
 		c=argv[1][i];
 		if(isalpha(c)){
-			*tail=(Node*)malloc(sizeof(Node));
-			(*tail)->op=c;
-			(*tail)->next=NULL;
-			tail=&((*tail)->next);
+			printf("%c",c);
 		}
 		else if(isblank(c))continue;
 		else if(c==')'){
 			while(top->op!='('){
-				*tail=top;
+				remove=top;
+				printf("%c",top->op);
 				top=top->next;
-				(*tail)->next=NULL;
-				tail=&((*tail)->next);
+				free(remove);
 			}
 			new=top;
 			top=new->next;
@@ -50,10 +46,10 @@ int main(int argc,char** argv){
 		}
 		else{
 			while(top->op!='(' && precedence(c)<=precedence(top->op)){
-				*tail=top;
+				remove=top;
+				printf("%c",top->op);
 				top=top->next;
-				(*tail)->next=NULL;
-				tail=&((*tail)->next);
+				free(remove);
 			}
 			new=(Node*)malloc(sizeof(Node));
 			new->op=c;
@@ -62,13 +58,9 @@ int main(int argc,char** argv){
 		}
 	}
 	while(top->op!='('){
-		*tail=top;
+		printf("%c",top->op);
 		top=top->next;
-		(*tail)->next=NULL;
-		tail=&((*tail)->next);
 	}
-	for(;expression!=NULL;expression=expression->next)
-		printf("%c",expression->op);
 	printf("\n");
 	return 0;
 }
