@@ -1,0 +1,13 @@
+Number of nodes: 5
+Graph :
+  abcde
+a ftftf
+b ffftf
+c ftfff
+d fffft
+e fftff
+
+Start Node: a
+
+End Node: e 
+a->d->e.

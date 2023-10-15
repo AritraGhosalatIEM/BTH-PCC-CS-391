@@ -5,13 +5,12 @@ typedef struct node{
 	int data;
 	struct node* after;
 } Node;
-Node *head,**tail;
+Node *head,*tail;
 void enqueue(int value){
+	tail->data=value;
 	Node* new=(Node*)malloc(sizeof(Node));
-	new->data=value;
-	new->after=NULL;
-	*tail=new;
-	tail=&(new->after);
+	tail->after=new;
+	tail=new;
 }
 typedef struct resp{
 	int data;
@@ -19,7 +18,7 @@ typedef struct resp{
 } Response;
 Response dequeue(){
 	Response ret;
-	if(head==NULL){
+	if(head==tail){
 		ret.underflow=true;
 		return ret;
 	}
@@ -31,8 +30,8 @@ Response dequeue(){
 	return ret;
 }
 int main(){
-	head=NULL;
-	tail=&head;
+	head=(Node*)malloc(sizeof(Node));
+	tail=head;
 	Response deq;
 	int value;
 	puts("Enter integer values to add to queue and enter any string to remove from queue");

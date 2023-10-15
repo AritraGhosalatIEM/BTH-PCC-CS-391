@@ -1,0 +1,33 @@
+Node structure:
+
+data (integer)
+left (pointer to Node)
+right (pointer to Node)
+Procedure insert(current: pointer to pointer to Node, value: integer):
+
+if current is NULL:
+allocate memory for current
+set the left and right pointers of current to NULL
+set the data of current to value
+else if value < data of current:
+recursively call insert with the left pointer of current and value
+else if value > data of current:
+recursively call insert with the right pointer of current and value
+Procedure print(current: pointer to Node, spacing: unsigned integer):
+
+if current is NULL, return
+set new_spacing to spacing + 1 + length of current's data (converted to string) + number of digits in current's data (if current->data is negative)
+for i = 0 to spacing (inclusive), do:
+print " "
+print data of current
+print a newline
+recursively call print with the left pointer of current and new_spacing
+recursively call print with the right pointer of current and new_spacing
+Main program:
+
+print "Enter integers one after the other and enter string when done:"
+initialize head to NULL
+initialize u to 0
+while the input of u is an integer:
+call insert with the address of head and u
+call print with head and 0

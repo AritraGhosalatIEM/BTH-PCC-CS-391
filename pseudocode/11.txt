@@ -1,0 +1,12 @@
+SET MAX to 100 IMPORT libraries
+CREATE structure Node DEFINE data as integer DEFINE right as pointer to Node DEFINE left as pointer to Node
+
+FUNCTION generate_tree() IF rand()%2 is equal to 0 THEN RETURN NULL END IF CREATE current as pointer to Node ALLOCATE memory for current SET current->data to rand()%MAX SET current->left to generate_tree() SET current->right to generate_tree() RETURN current
+
+FUNCTION preorder(current) IF current is equal to NULL THEN RETURN END IF PRINT current->data followed by ',' CALL preorder(current->left) CALL preorder(current->right)
+
+FUNCTION inorder(current) IF current is equal to NULL THEN RETURN END IF CALL inorder(current->left) PRINT current->data followed by ',' CALL inorder(current->right)
+
+FUNCTION postorder(current) IF current is equal to NULL THEN RETURN END IF CALL postorder(current->left) CALL postorder(current->right) PRINT current->data followed by ','
+
+FUNCTION main() SET head to generate_tree() PRINT "Preorder:" CALL preorder(head) PRINT "\nInorder:" CALL inorder(head) PRINT "\nPostorder:" CALL postorder(head) PRINT "\n" RETURN 0

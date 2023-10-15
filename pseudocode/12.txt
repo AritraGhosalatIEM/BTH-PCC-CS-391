@@ -1,0 +1,29 @@
+Define the structure Node:
+data (integer): holds the value of the node
+after (pointer to Node): points to the next node in the linked list
+Declare global variables head and tail of type Node*.
+Define the function enqueue:
+Input: value (integer)
+Set tail->data to the value
+Allocate memory for a new node and assign it to new
+Set tail->after to new
+Update tail with the new node
+Define the function dequeue:
+Set remove to head
+Set ret to remove->data
+Set head to remove->after
+Free the memory allocated for remove
+Return ret
+Define the function main:
+Declare variable N (unsigned integer)
+Print "Number of nodes: "
+Read N from user input
+Declare an array name of characters with size N
+Declare a 2D array graph of boolean values with size N x N
+Print "Graph :"
+For i in range 0 to N
+Print " "
+Read a character from user input and assign it to name[i]
+For j in range 0 to N
+- Read a boolean value from user input and assign it to graph[i][j]
+Return 0
