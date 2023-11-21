@@ -28,11 +28,11 @@ void mergesort(int arr[],unsigned int len){
 }
 void quicksort(int arr[],unsigned int begin,unsigned int len){
 	if(begin==len)return;
-	int pivot=arr[len-1],t;
-	unsigned int from_left=begin,from_right=len-1;
+	unsigned int from_left=begin,from_right;
+	int pivot=arr[from_right=len-1],t;
 	while(from_left<from_right){
-		for(;arr[from_left]<pivot && from_left<=from_right;from_left++);
-		for(;arr[from_right]>pivot && from_left<=from_right;from_right--);
+		for(;arr[from_left]<=pivot && from_left<from_right;from_left++);
+		for(;arr[from_right]>pivot && from_left<from_right;from_right--);
 		t=arr[from_left];
 		arr[from_left]=arr[from_right];
 		arr[from_right]=t;
